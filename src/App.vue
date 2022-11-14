@@ -1,26 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <swHeader />
+    
+    <swFooter />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
+//import  swCard  from "@/components/swCard.vue";
+import  swHeader  from "@/components/swHeader.vue";
+//import swSideBar from "@/components/swSideBar.vue"
+import  swFooter  from "@/components/swFooter.vue";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+components:{
+  swHeader, swFooter, /*swCard swSideBar*/
+}
 }
 </script>
 
 <style>
+@import "assets/css/style.min.css";
+@import "assets/fonts/fonts.min.css";
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  /*background-color: black;*/
+  background-image: url("assets/img/sky.jpg");
+  font-family: "Roboto";  
 }
 </style>
