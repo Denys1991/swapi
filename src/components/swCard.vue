@@ -236,8 +236,8 @@
     color: #999;   
     background: rgb(36, 36, 36);
     justify-content: space-between;
-    border-radius: 10px;
-    overflow: hidden;
+    border-radius: 10px;  
+    overflow: hidden;  
 }
 .filmCard:hover{
     transition: all .5s ease;
@@ -247,7 +247,13 @@
         transition: all .5s ease;
         color: rgb(248, 220, 64);
     }
-    
+    img{
+        transform: scale(1.1);
+        transition: all .5s ease;
+    }
+}
+.filmCard_img{
+    overflow: hidden;
 }
 .filmCard_text{
     width: 53%;
