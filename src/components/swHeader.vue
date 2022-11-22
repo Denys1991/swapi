@@ -133,7 +133,7 @@
     
 }
 .search input{
-    background-color: rgb(85, 85, 85);
+    background-color: rgba(85, 85, 85, 0.7);
     border: none;
     padding: 10px 40px 10px 10px;
     border-radius: 5px;
@@ -142,18 +142,18 @@
 .search input:focus, .search input:active{
     border: none;
     outline: none;
-    background-color: rgb(87, 85, 85);
+    background-color: rgba(87, 85, 85, 0.7);
 }
 //_________________________________________________________________nav
 .wrapperNav{
-    border-top: 1px solid rgb(95, 94, 94);
-    border-bottom: 1px solid rgb(95, 94, 94);
+    border-top: 1px solid rgba(95, 94, 94, 0.8);
+    border-bottom: 1px solid rgba(95, 94, 94, 0.8);
     margin: 20px 0px 0px;
     display: flex;
     justify-content: center;
     width: 100%;
+    background-color: rgba(8, 8, 8, 0.7);    
 }
-
 .nav{
     max-width: 1200px;
     width: 100%;
@@ -164,7 +164,7 @@
     border-bottom: 1px solid rgb(95, 94, 94);*/
     flex-wrap: wrap;
     font-size: 25px;
-    margin: 0 10px;
+    margin: 0 10px;    
 }
 .nav div{
     padding: 10px 0;
@@ -172,9 +172,10 @@
     cursor: pointer;
     width: 16.6%;
     text-align: center;
+    
     /*border-bottom:  1px solid rgb(95, 94, 94);*/
 }
-.nav div:hover{
+.nav div:hover{    
     color: white;
 }
 .nav:last-child{

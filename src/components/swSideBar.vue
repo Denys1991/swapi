@@ -43,13 +43,13 @@
     }
 
 </script>
-<style>
+<style lang="scss" scoped>
 .wrapperSB{
     height: 100vh;
     width: 300px;
     color: #999;
     padding: 40px;
-    background-color: rgb(12, 12, 12, .7);
+    background-color: rgba(12, 12, 12, .7);
 }
 .loginSB{
     display: flex; 
@@ -66,20 +66,31 @@
     position: relative;
     top: 7px;
 }
+.loginSB p:hover{
+    cursor: pointer;
+    color: #fff;
+}
 .navSB{
     font-size: 30px;
     display: flex;
     flex-direction: column;
     gap: 40px;
     height: 85%;
-    
+}
+.navSB div:hover{
+    cursor: pointer;        
+    color: #fff;
+        
 }
 .navSB div{
     padding: 10px;
-    cursor: pointer;
+    
 }
 .socSB{
     display: flex;
     justify-content: space-around;
+}
+.socSB div a svg:hover{
+    fill: white
 }
 </style>
