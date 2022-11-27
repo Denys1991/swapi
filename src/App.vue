@@ -4,22 +4,20 @@
     <transition name="fade">
       <swSideBar v-if="isSideBarShow"/>
     </transition>
-    <swCard />
-    <swCarousel />
+    <router-view></router-view>
     <swFooter />
   </div>
 </template>
 
 <script>
-import  swCarousel  from "@/components/swCarousel.vue";
-import  swCard  from "@/components/swCard.vue";
+
 import  swHeader  from "@/components/swHeader.vue";
 import swSideBar from "@/components/swSideBar.vue"
 import  swFooter  from "@/components/swFooter.vue";
 export default {
 
 components:{
-  swHeader, swFooter, swCard, swCarousel, swSideBar
+  swHeader, swFooter, /*swCard, swCarousel,*/ swSideBar
 },
   data(){
     return {
@@ -29,6 +27,9 @@ components:{
 methods:{
   showSideBar(){
     console.log('showSideBar in app')
+    const btnSideBar = document.querySelector('.btn_sidebar');
+    btnSideBar.classList.toggle('btn_active');
+    
     this.isSideBarShow=!this.isSideBarShow
   },
 

@@ -23,9 +23,9 @@
                     </a>
                 </div>
             </div>
-            <div class="img_logo">
+            <router-link to='/' class="img_logo">
                 <img src="../assets/img/sw_logo.png" alt="logo">
-            </div>
+            </router-link>
             <div class="searchlogin">
                 <div class="search">
                     <input type="text" placeholder="Search Star Wars">
@@ -48,7 +48,7 @@
     <div class="wrapperNav">
         
         <nav class="nav">
-            <div v-for="nav in navigation" :key="nav">{{nav}}</div>
+            <router-link v-for="nav in navigation" :key="nav.name" :to='nav.route'>{{nav.name}} </router-link>
         </nav>  
             
     </div>
@@ -58,7 +58,32 @@
         data(){
             return{
                 nav:'',
-                navigation:['People', 'Planets', 'Films', 'Species', 'Vehicles', 'Starships'],
+                //navigation:['People', 'Planets', 'Films', 'Species', 'Vehicles', 'Starships'],
+                navigation:[{
+                    name: 'People',
+                    route:'/people'
+                },
+                {
+                    name: 'People',
+                    route:'/people'
+                },
+                {
+                    name: 'People',
+                    route:'/people'
+                },
+                {
+                    name: 'People',
+                    route:'/people'
+                },
+                {
+                    name: 'People',
+                    route:'/people'
+                },
+                {
+                    name: 'People',
+                    route:'/people'
+                },
+            ]
             };
         },
         methods:{
