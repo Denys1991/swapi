@@ -63,8 +63,7 @@
         },
         methods:{
             changeBtnSidebar(){
-                const btnSideBar = document.querySelector('.btn_sidebar');
-                btnSideBar.classList.toggle('btn_active')
+                this.$emit('showSideBar')
             }
         }
     }
