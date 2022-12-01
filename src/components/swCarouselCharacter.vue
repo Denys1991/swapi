@@ -1,23 +1,26 @@
 <template>
-    <carousel class="carousel" :settings="settings" :breakpoints="breakpoints">
-      <slide  v-for="sliderItem in sliderItems" :key="sliderItem.id">
-        <div class="character">
-            <div class="character_img">
-                <img :src="sliderItem.img" :alt="sliderItem.titleCard">
+    <div class="wrapper_carousel_character">
+        <h2 class="carousel_name">CHARACTERS</h2>
+        <carousel class="carousel" :settings="settings" :breakpoints="breakpoints">
+        <slide  v-for="sliderItem in sliderItems" :key="sliderItem.id">
+            <div class="character">
+                <div class="character_img">
+                    <img :src="sliderItem.img" :alt="sliderItem.titleCard">
+                </div>
+                <div class="character_text">
+                    <h6>{{sliderItem.titleCard}}</h6>
+                    <p>{{sliderItem.text}}</p>
+                </div>
             </div>
-            <div class="character_text">
-                <h6>{{sliderItem.titleCard}}</h6>
-                <p>{{sliderItem.text}}</p>
-            </div>
-        </div>
+            
+        </slide>
         
-      </slide>
-      
-      <template #addons>
-        <navigation />
-        <pagination />
-      </template>
-    </carousel>
+        <template #addons>
+            <navigation />
+            <pagination />
+        </template>
+        </carousel>
+    </div>
   </template>
   
   <script>
@@ -91,6 +94,10 @@
   </script>
   
   <style lang="scss" scoped>
+  .wrapper_carousel_character{
+    padding: 50px 0 50px;
+  }
+  
   .character{
     max-width: 270px;
     border-radius: 10px;

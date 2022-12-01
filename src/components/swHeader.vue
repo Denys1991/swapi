@@ -64,24 +64,24 @@
                     route:'/people'
                 },
                 {
-                    name: 'People',
-                    route:'/people'
+                    name: 'Planets',
+                    route:'/planets'
                 },
                 {
-                    name: 'People',
-                    route:'/people'
+                    name: 'Films',
+                    route:'/films'
                 },
                 {
-                    name: 'People',
-                    route:'/people'
+                    name: 'Species',
+                    route:'/species'
                 },
                 {
-                    name: 'People',
-                    route:'/people'
+                    name: 'Vehicles',
+                    route:'/vehicles'
                 },
                 {
-                    name: 'People',
-                    route:'/people'
+                    name: 'Starships',
+                    route:'/starships'
                 },
             ]
             };
@@ -183,23 +183,23 @@
     width: 100%;
     display: flex;
     justify-content: space-between;    
-    color: #999;
+    
     /*border-top: 1px solid rgb(95, 94, 94);
     border-bottom: 1px solid rgb(95, 94, 94);*/
     flex-wrap: wrap;
     font-size: 25px;
     margin: 0 10px;    
 }
-.nav div{
+.nav a{
     padding: 10px 0;
     border-left: 1px solid rgb(95, 94, 94);
     cursor: pointer;
     width: 16.6%;
     text-align: center;
-    
+    color: #999;
     /*border-bottom:  1px solid rgb(95, 94, 94);*/
 }
-.nav div:hover{    
+.nav a:hover{    
     color: white;
 }
 .nav:last-child{
@@ -269,7 +269,7 @@
 }
 //____________________________________________________________________media
 @media (max-width: 650px){
-    .nav div{
+    .nav a{
         width: 33.3%;
         padding: 30px 0;
         border-bottom:  1px solid rgb(95, 94, 94);

@@ -11,7 +11,32 @@ const routes = [
     path: '/people',
     name: 'people',    
     component: () => import('../pages/swPeople')
-  }
+  },
+  {
+    path: '/planets',
+    name: 'planets',
+    component: () => import('../pages/swPlanets')
+  },
+  {
+    path: '/films',
+    name: 'films',
+    component: () => import('../pages/swFilms')
+  },
+  {
+    path: '/species',
+    name: 'species',
+    component: () => import('../pages/swSpecies')
+  },
+  {
+    path: '/vehicles',
+    name: 'vehicles',
+    component: () => import('../pages/swVehicles')
+  },
+  {
+    path: '/starships',
+    name: 'starships',
+    component: () => import('../pages/swStarships')
+  },
 ]
 
 const router = createRouter({

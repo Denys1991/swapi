@@ -1,4 +1,6 @@
 <template>
+  <div class="wrapper_carousel_film">
+    <h2 class="carousel_name">FILM</h2>
     <carousel class="carousel" :settings="settings" >
       <slide  v-for="sliderItem in sliderItems" :key="sliderItem.id">
         <div class="filmCard" >
@@ -18,7 +20,8 @@
         <pagination />
       </template>
     </carousel>
-  </template>
+  </div>
+</template>
   
   <script>
   // If you are using PurgeCSS, make sure to whitelist the carousel CSS classes
@@ -64,6 +67,9 @@
   
   <style lang="scss" scoped>
   
+  .wrapper_carousel_film{
+    padding: 50px 10px 50px 10px;
+  }
   
   .carousel__item {
   min-height: 200px;
@@ -85,8 +91,9 @@
 .carousel__prev,
 .carousel__next {
   box-sizing: content-box;
-  border: 5px solid white;
+  border: 5px solid white;  
 }
+
   //________________________________________________________________filmCard
 .filmCard{
     display: flex;
@@ -96,7 +103,7 @@
     border-radius: 10px;  
     overflow: hidden;  
     max-width: 1200px;
-    
+    min-height: 288px;
 }
 .filmCard:hover{
     transition: all .5s ease;
@@ -118,6 +125,10 @@
     }
 }
 .filmCard_text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 53%;
     padding: 30px;
     min-height: 100%;
