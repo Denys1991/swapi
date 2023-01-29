@@ -18,8 +18,26 @@ export default {
     getFilms(){
         return axios.get("/films/")
     },
-    getFilmsById(id){
-        console.log(id.slice(27))
+    getFilmsById(id){        
         return axios.get(`/films${id.slice(27)}`)
+    },
+    getSpecies(){
+        return axios.get("/species/")
+    },
+    getSpeciesById(id){
+        return axios.get(`/species${id.slice(29)}`)
+    },
+    getVehicles(){
+        return axios.get("/vehicles/")
+    },
+    getVehiclesById(id){
+        return axios.get(`/vehicles${id.slice(30)}`)
+    },
+    getStarships(){
+        return axios.get("/starships/")
+    },
+    getStarshipsById(id){
+        console.log(id.slice(31))
+        return axios.get(`/starships${id.slice(31)}`)
     },
 }

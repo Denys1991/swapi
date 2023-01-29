@@ -25,7 +25,7 @@
                     <p>Eye color: {{ peoplesById.eye_color }}</p>
                     <p>Birth year: {{ peoplesById.birth_year }}</p>
                     <p>Gender: {{ peoplesById.gender }}</p>
-                    <p v-if = 'showHomeWorld' @click="getHomeWorld1(peoplesById.homeworld)">HomeWorld</p>
+                    <p v-if = 'showHomeWorld' @click="getHomeWorld(peoplesById.homeworld)">HomeWorld</p>
                     <p v-else> {{ homeWorld }} </p>
                 </div>
             </div>
@@ -74,7 +74,8 @@
             getHomeWorld(url){                
                 this.$store.dispatch('getPlanetsById', url)
                 let ld = this.$store.getters.getPlanetsById;
-                this.homeWorld = ld.name
+                console.log(ld)
+                this.homeWorld = ld.name;
                 this.showHomeWorld = false;
             },
             

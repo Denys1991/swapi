@@ -2,6 +2,9 @@ import { createStore } from 'vuex'
 import people from './modules/people.js'
 import planets from './modules/planets.js'
 import films from './modules/films.js'
+import species from './modules/species.js'
+import vehicles from './modules/vehicles.js'
+import starships from './modules/starships.js'
 export default createStore({
   state: {
   },  
@@ -14,6 +17,9 @@ export default createStore({
   modules: {
     people,
     planets,
-    films
+    films,
+    species,
+    vehicles,
+    starships
   }
 })

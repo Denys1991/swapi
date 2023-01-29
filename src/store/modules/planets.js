@@ -30,11 +30,9 @@ const actions = {
 }
 const mutations = {
     setPlanets(state, payload){
-        console.log(payload);
         state.planets = payload
     },
     setPlanetsById(state, payload){
-        console.log(payload)
         state[payload.key] = payload.value;
     }
 }
