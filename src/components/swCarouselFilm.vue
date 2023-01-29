@@ -2,15 +2,12 @@
   <div class="wrapper_carousel_film">
     <h2 class="carousel_name">FILM</h2>
     <carousel class="carousel" :settings="settings" >
-      <slide  v-for="sliderItem in sliderItems" :key="sliderItem.id">
+      <slide  v-for="sliderItem in films" :key="sliderItem">
         <div class="filmCard" >
             <div class="filmCard_text">
-                <h6>{{sliderItem.titleCard}}</h6>
-                <p>{{sliderItem.text}}</p>
-            </div>
-            <div class="filmCard_img">
-                <img :src="sliderItem.img" :alt="sliderItem.titleCard">
-            </div>
+                <h6>STAR WARS episode {{ sliderItem.episode_id }}: {{ sliderItem.title }}</h6>
+                <p>{{sliderItem.opening_crawl}}</p>
+            </div>            
         </div>
         
       </slide>
@@ -61,6 +58,19 @@
             ]
         }
     },
+    mounted(){
+           this.$store.dispatch('getFilms');
+
+        },
+        computed:{
+            films(){
+                return this.$store.getters.getFilms;
+            },
+            filmsById(){
+                
+                return this.$store.getters.getFilmsById;
+            }
+        },
     
 }
   </script>
@@ -129,7 +139,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 53%;
+    width: 100%;
     padding: 30px;
     min-height: 100%;
     border-right: 2px solid rgb(248, 220, 64);

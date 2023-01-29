@@ -2,14 +2,17 @@
     <div class="wrapper_carousel_character">
         <h2 class="carousel_name">CHARACTERS</h2>
         <carousel class="carousel" :settings="settings" :breakpoints="breakpoints">
-        <slide  v-for="sliderItem in sliderItems" :key="sliderItem.id">
+        <slide  v-for="sliderItem in peoples" :key="sliderItem">
             <div class="character">
-                <div class="character_img">
-                    <img :src="sliderItem.img" :alt="sliderItem.titleCard">
-                </div>
                 <div class="character_text">
-                    <h6>{{sliderItem.titleCard}}</h6>
-                    <p>{{sliderItem.text}}</p>
+                    <h6>{{sliderItem.name}}</h6>
+                    <p>Gender: {{ sliderItem.gender }}</p>
+                    <p>Height: {{ sliderItem.height }}</p>
+                    <p>Mass: {{ sliderItem.mass }}</p>
+                    <p>Hair color: {{ sliderItem.hair_color }}</p>
+                    <p>Skin color: {{ sliderItem.skin_color }}</p>
+                    <p>Eye color: {{ sliderItem.eye_color }}</p>
+                    <p>Birth year: {{ sliderItem.birth_year }}</p>
                 </div>
             </div>
             
@@ -89,6 +92,20 @@
             ]
         }
     },
+    mounted(){
+            this.$store.dispatch('getPeople');
+            
+
+        },
+        computed:{
+            peoples(){
+                return this.$store.getters.getPeople;
+            },     
+            peoplesById(){
+                return this.$store.getters.getPeopleById;
+            },
+                         
+        },
     
 }
   </script>
@@ -129,13 +146,14 @@
     min-height: 269px;
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 30px;
     gap: 10px;
-    border-top: 2px solid rgb(245, 108, 131);
+    border-left: 2px solid rgb(245, 108, 131);
     h6{
         color: #fff;
         font-weight: 700;
-        font-size: 23px;        
+        font-size: 23px;
+        margin:20px;        
     }
     
 }

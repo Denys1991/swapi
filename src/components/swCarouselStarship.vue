@@ -2,15 +2,18 @@
     <div class="wrapper_carousel_starship">
         <h2 class="carousel_name">STARSHIP</h2>
       <carousel class="carousel" :settings="settings" >
-        <slide  v-for="sliderItem in sliderItems" :key="sliderItem.id">
+        <slide  v-for="sliderItem in starships" :key="sliderItem.id">
           <div class="starshipCard" >
               <div class="starshipCard_text">
-                  <h6>{{sliderItem.titleCard}}</h6>
-                  <p>{{sliderItem.text}}</p>
-              </div>
-              <div class="starshipCard_img">
-                  <img :src="sliderItem.img" :alt="sliderItem.titleCard">
-              </div>
+                  <h6>{{sliderItem.name}}</h6>
+                  <p>{{sliderItem.starship_class}}</p>
+                  <p>Model: {{ sliderItem.model }}</p>
+                    <p>Manufacturer: {{ sliderItem.manufacturer }}</p>
+                    <p>Passengers: {{ sliderItem.passengers }}</p>
+                    <p>Max atmosphering speed: {{ sliderItem.max_atmosphering_speed }}</p>
+                    <p>Consumables: {{ sliderItem.consumables }}</p>
+                    <p>MGLT: {{ sliderItem.MGLT }}</p>
+              </div>              
           </div>
           
         </slide>
@@ -81,6 +84,18 @@
               ]
           }
       },
+      mounted(){
+           this.$store.dispatch('getStarships');
+
+        },
+        computed:{
+            starships(){
+                return this.$store.getters.getStarships;
+            },
+            starshipsById(){
+                return this.$store.getters.getStarshipsById;
+            }
+        },
       
   }
     </script>
@@ -149,7 +164,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 53%;
+      width: 100%;
       padding: 30px;
       min-height: 100%;
       border-right: 2px solid rgb(248, 220, 64);
